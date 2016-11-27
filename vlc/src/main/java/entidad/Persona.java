@@ -42,29 +42,38 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Persona implements Serializable {
 
     private static final long serialVersionUID = 1L;
+    
     @Id
     @Basic(optional = false)
     @Column(name = "id_persona")
     private String idPersona;
+    
     @Basic(optional = false)
     @Column(name = "nombre")
     private String nombre;
+    
     @Basic(optional = false)
     @Column(name = "apellido")
     private String apellido;
+    
     @Basic(optional = false)
     @Column(name = "direccion")
     private String direccion;
+    
     @Basic(optional = false)
     @Column(name = "ciudad")
     private String ciudad;
+    
     @Basic(optional = false)
     @Column(name = "telefono")
     private String telefono;
+    
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idPersona")
     private Set<Cotizacion> cotizacionSet;
+    
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idPersona")
     private Set<Factura> facturaSet;
+    
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idPersona")
     private Set<Empleado> empleadoSet;
 

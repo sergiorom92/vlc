@@ -9,6 +9,8 @@ import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -33,6 +35,11 @@ public class DetalleFactura implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
+    @Basic(optional = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Integer id;
+
     @Basic(optional = false)
     @Column(name = "factura_id")
     private Integer facturaId;
@@ -70,11 +77,20 @@ public class DetalleFactura implements Serializable {
         this.factura = factura;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    
     public DetalleFactura(Integer facturaId, Vidrio idVidrio) {
         this.facturaId = facturaId;
         this.idVidrio = idVidrio;
     }
-
+        
     public DetalleFactura(Integer facturaId, Vidrio idVidrio, Factura factura) {
         this.facturaId = facturaId;
         this.idVidrio = idVidrio;
@@ -83,8 +99,9 @@ public class DetalleFactura implements Serializable {
 
     @Override
     public String toString() {
-        return "DetalleFactura{" + "facturaId=" + facturaId + ", idVidrio=" + idVidrio + ", factura=" + factura + '}';
+        return "DetalleFactura{" + "id=" + id + ", facturaId=" + facturaId + ", idVidrio=" + idVidrio + ", factura=" + factura + '}';
     }
 
+    
     
 }

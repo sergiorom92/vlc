@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Vidrio Form</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </h:head>
+    <style>
+        body{ background-color: #FFFFFF;
+
+        }
+        h1{
+            color: #FFFFFF;
+        }
+    </style>
+    <body>
+
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">VLC</a>
+                </div>
+
+            </div>
+        </nav>
+
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <p> 
+                    Bienvenido al sistema de Vlc!! Por favor ingrese su usuario y contraseña. 
+                    Si aún no se encuentra registrado, por favor contacte al admnistrador del 
+                    sistema.
+                </p>
+            </div>
+
+            <div class="col-sm-1"></div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <form>
+                    <div class="form-group">
+                        <label for="email">Identificación:</label>
+                        <input type="email" class="form-control" id="email"></input>
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd">Contraseña:</label>
+                        <input type="password" class="form-control" id="pwd"></input>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox"> Remember me</input></label>
+                    </div>
+                    <button type="submit" class="btn btn-default">Ingresar</button>
+                </form>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+
+
+
+    </body>
+</html>

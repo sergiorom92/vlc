@@ -41,12 +41,13 @@ CREATE TABLE factura (
 );
 
 
-CREATE TABLE detalle_factura (
-                factura_id INT NOT NULL,
-                id_vidrio INT NOT NULL,
-                PRIMARY KEY (factura_id)
-);
 
+CREATE TABLE detalle_factura (
+                id INT AUTO_INCREMENT NOT NULL,
+                id_vidrio INT NOT NULL,
+                factura_id INT NOT NULL,
+                PRIMARY KEY (id)
+);
 
 CREATE TABLE cotizacion (
                 cotizacion_id INT NOT NULL,
@@ -56,11 +57,14 @@ CREATE TABLE cotizacion (
 );
 
 
+
 CREATE TABLE detalle_cotizacion (
-                cotizacion_id INT NOT NULL,
+                id INT AUTO_INCREMENT NOT NULL,
                 id_vidrio INT NOT NULL,
-                PRIMARY KEY (cotizacion_id)
+                cotizacion_id INT NOT NULL,
+                PRIMARY KEY (id)
 );
+
 
 
 ALTER TABLE detalle_factura ADD CONSTRAINT vidrio_detalle_factura_fk
@@ -94,20 +98,20 @@ ON DELETE NO ACTION
 ON UPDATE NO ACTION;
 
 ALTER TABLE cotizacion ADD CONSTRAINT empleado_cotizacion_fk
-FOREIGN KEY (id_empleado)
-REFERENCES empleado (id_empleado)
+FOREIGN KEY (id_empleado, id_persona)
+REFERENCES empleado (id_empleado, id_persona)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION;
 
 ALTER TABLE factura ADD CONSTRAINT empleado_factura_fk
-FOREIGN KEY (id_empleado)
-REFERENCES empleado (id_empleado)
+FOREIGN KEY (id_empleado, id_persona)
+REFERENCES empleado (id_empleado, id_persona)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION;
 
 ALTER TABLE factura ADD CONSTRAINT empleado_factura_fk1
-FOREIGN KEY (id_empleado_corte)
-REFERENCES empleado (id_empleado)
+FOREIGN KEY (id_empleado_corte, id_persona)
+REFERENCES empleado (id_empleado, id_persona)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION;
 

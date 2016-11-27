@@ -64,12 +64,87 @@ public class Vidrio implements Serializable {
     @Basic(optional = false)
     @Column(name = "descripcion")
     private String descripcion;
+    @Basic(optional = false)
+    @Column(name = "disponible")
+    private boolean disponible;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idVidrio")
     private Set<DetalleCotizacion> detalleCotizacionSet;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idVidrio")
     private Set<DetalleFactura> detalleFacturaSet;
 
     public Vidrio() {
+    }
+
+    public Integer getIdVidrio() {
+        return idVidrio;
+    }
+
+    public void setIdVidrio(Integer idVidrio) {
+        this.idVidrio = idVidrio;
+    }
+
+    public double getGrosor() {
+        return grosor;
+    }
+
+    public void setGrosor(double grosor) {
+        this.grosor = grosor;
+    }
+
+    public double getLargo() {
+        return largo;
+    }
+
+    public void setLargo(double largo) {
+        this.largo = largo;
+    }
+
+    public double getAncho() {
+        return ancho;
+    }
+
+    public void setAncho(double ancho) {
+        this.ancho = ancho;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public boolean isDisponible() {
+        return disponible;
+    }
+
+    public void setDisponible(boolean disponible) {
+        this.disponible = disponible;
+    }
+
+    public Set<DetalleCotizacion> getDetalleCotizacionSet() {
+        return detalleCotizacionSet;
+    }
+
+    public void setDetalleCotizacionSet(Set<DetalleCotizacion> detalleCotizacionSet) {
+        this.detalleCotizacionSet = detalleCotizacionSet;
+    }
+
+    public Set<DetalleFactura> getDetalleFacturaSet() {
+        return detalleFacturaSet;
+    }
+
+    public void setDetalleFacturaSet(Set<DetalleFactura> detalleFacturaSet) {
+        this.detalleFacturaSet = detalleFacturaSet;
     }
 
     public Vidrio(Integer idVidrio, double grosor, double largo, double ancho, double precio, String descripcion) {
@@ -79,13 +154,12 @@ public class Vidrio implements Serializable {
         this.ancho = ancho;
         this.precio = precio;
         this.descripcion = descripcion;
+        this.disponible = true;
     }
 
     @Override
     public String toString() {
-        return "Vidrio{" + "idVidrio=" + idVidrio + ", grosor=" + grosor + ", largo=" + largo + ", ancho=" + ancho + ", precio=" + precio + ", descripcion=" + descripcion + ", detalleCotizacionSet=" + detalleCotizacionSet + ", detalleFacturaSet=" + detalleFacturaSet + '}';
+        return "Vidrio{" + "idVidrio=" + idVidrio + ", grosor=" + grosor + ", largo=" + largo + ", ancho=" + ancho + ", precio=" + precio + ", descripcion=" + descripcion + ", disponible=" + disponible + ", detalleCotizacionSet=" + detalleCotizacionSet + ", detalleFacturaSet=" + detalleFacturaSet + '}';
     }
-    
-    
-    
+
 }
