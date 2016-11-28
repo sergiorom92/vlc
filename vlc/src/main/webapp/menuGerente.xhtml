@@ -52,5 +52,10 @@ and open the template in the editor.
             </div>
         </nav>
 
+        <h:form>
+            <p>Welcome #{login.nombre}</p>
+            <h:commandLink action="#{login.logout}" value="Logout"></h:commandLink>
+        </h:form>
+
     </body>
 </html>

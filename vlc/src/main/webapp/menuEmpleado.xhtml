@@ -36,7 +36,7 @@ and open the template in the editor.
                     <a class="navbar-brand" href="#">VLC</a>
                 </div>
                 <ul class="nav navbar-nav">
-                    
+
                     <li><a href="faces/listarVidrio.xhtml">Listar vidrios</a> </li>
                     <li><a href="faces/insertarPersona.xhtml">Insertar cliente</a> </li>
                     <li><a href="faces/facturar.xhtml">Facturar</a> </li>
@@ -47,6 +47,11 @@ and open the template in the editor.
                 </ul>
             </div>
         </nav>
+
+        <h:form>
+            <p>Welcome #{login.nombre}</p>
+            <h:commandLink action="#{login.logout}" value="Logout"></h:commandLink>
+        </h:form>
 
     </body>
 </html>
